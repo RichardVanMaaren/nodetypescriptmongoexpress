@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth';
+import exampleRoutes from './routes/examples';
 
 dotenv.config();
 
@@ -14,9 +15,10 @@ app.use(express.json());
 
 // Routes
 app.use('/auth', authRoutes);
+app.use('/exx',exampleRoutes)
 
 // Connect to MongoDB and Start Server
-;
+
 console.log(MONGO_URI )
 mongoose
   .connect(MONGO_URI)
